@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            display: flex;
+        }
+        #menu {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        #main {
+            flex: 3;
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="menu">
+            <input type="text" id="searchInput" placeholder="Search a word...">
+            <button onclick="search()">Search</button>
+            <p>Click on each category to see examples:</p>
+            <ul id="menuList"></ul>
+        </div>
+        <div id="main">
+            <h2>Welcome to the Documentation</h2>
+            <div id="documentationContent">
+                Select a category from the menu or use the search bar to find documentation.
+            </div>
+        </div>
+    </div>
+
+    <script>
+	function includeExternalContent(name) {
+		fetch(`./html_pages/${name.toLowerCase()}.html`)
+			.then(response => response.text())
+			.then(data => {
+			document.getElementById('main').innerHTML = data;
+			})
+			.catch(error => {
+			console.error('Error fetching cats.html:', error);
+			});
+		}
+
+    // Call the function to include cats.html content
+        // Load documentation data from JSON file
+        const documentationData = [
+            {
+                "category": "Food and food packaging",
+                "content": [
+                    {
+                        "subcategory": "Transparent plastic food tray", "tags": ["food", "tray", "transparent", "takeaway", "lunch", "packaging"]
+                    },
+                    {
+                        "subcategory": "Opaque plastic food tray", "tags": ["food", "tray", "takeaway", "lunch", "packaging"]
+                    },
+                    {
+                        "subcategory": "Cardboard food tray", "tags": []
+                    },
+                    {
+                        "subcategory": "Foam polystyrene food tray", "tags": []
+                    },
+                    {
+                        "subcategory": "Transparent food cup", "tags": ["soup"]
+                    },
+                    {
+                        "subcategory": "Transparent plastic tray lid", "tags": ["lunch"]
+                    },
+                    {
+                        "subcategory": "Fries box", "tags": ["french", "fast food", "mcdo", "mc donald's"]
+                    },
+                    {
+                        "subcategory": "Burger/nuggets box", "tags": ["fast food", "mcdo", "mc donald's", "hamburger"]
+                    },
+                    {
+                        "subcategory": "FF paper folder", "tags": ["fast food", "mcdo", "mc donald's"]
+                    },
+                    {
+                        "subcategory": "FF paper bag", "tags": ["fast food", "mcdo", "mc donald's"]
+                    },
+                    {
+                        "subcategory": "Happy Meal box", "tags": []
+                    },
+                    {
+                        "subcategory": "Fast food drink cup", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Drink cups or bottles or cans or cartons",
+                "content": [
+                    {
+                        "subcategory": "Glass bottle", "tags": []
+                    },
+                    {
+                        "subcategory": "PET bottle", "tags": ["plastic"]
+                    },
+                    {
+                        "subcategory": "Can", "tags": []
+                    },
+                    {
+                        "subcategory": "Opaque plastic cup", "tags": []
+                    },
+                    {
+                        "subcategory": "Transparent plastic cup", "tags": []
+                    },
+                    {
+                        "subcategory": "Fast food drink cup", "tags": []
+                    },
+                    {
+                        "subcategory": "Fast food drink cup lid", "tags": []
+                    },
+                    {
+                        "subcategory": "Carton drink", "tags": []
+                    },
+                    {
+                        "subcategory": "Bottle/can cap", "tags": []
+                    },
+                    {
+                        "subcategory": "Straw", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Garbage bags",
+                "content": [
+                    {
+                        "subcategory": "Black", "tags": []
+                    },
+                    {
+                        "subcategory": "Opaque blue", "tags": []
+                    },
+                    {
+                        "subcategory": "Transparent blue", "tags": []
+                    },
+                    {
+                        "subcategory": "White", "tags": []
+                    },
+                    {
+                        "subcategory": "Gray", "tags": []
+                    },
+                    {
+                        "subcategory": "Orange", "tags": []
+                    },
+                    {
+                        "subcategory": "Green", "tags": []
+                    },
+                    {
+                        "subcategory": "Other", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Consumables and addictions",
+                
+                    "content": [
+                        {
+                            "subcategory": "Cigarettes", "tags": []
+                        },
+                        {
+                            "subcategory": "Iqos", "tags": []
+                        },
+                        {
+                            "subcategory": "Syringe", "tags": []
+                        },
+                        {
+                            "subcategory": "Small nitrous oxyde bottle", "tags": []
+                        },
+                        {
+                            "subcategory": "Big nitrous oxyde bottle", "tags": []
+                        }
+                    ]
+            },
+            {
+                "category": "Paper and cardboard items",
+                "content": [
+                    {
+                        "subcategory": "Piece of paper/cardboard", "tags": []
+                    },
+                    {
+                        "subcategory": "Cardboard box", "tags": []
+                    },
+                    {
+                        "subcategory": "Newspaper", "tags": []
+                    },
+                    {
+                        "subcategory": "Paper groceries bag", "tags": []
+                    },
+                    {
+                        "subcategory": "Confettis/shredded paper", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Leaves",
+                "content": [
+                    {
+                        "subcategory": "Heap of leaves", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Plastic items",
+                "content": [
+                    {
+                        "subcategory": "Transparent foil", "tags": []
+                    },
+                    {
+                        "subcategory": "Opaque / colored foil", "tags": []
+                    },
+                    {
+                        "subcategory": "Food plastic wrapping", "tags": []
+                    },
+                    {
+                        "subcategory": "Solid transparent", "tags": []
+                    },
+                    {
+                        "subcategory": "Solid opaque", "tags": []
+                    },
+                    {
+                        "subcategory": "Robidog", "tags": []
+                    }
+                ],
+            },
+            {
+                "category": "Stains",
+                "content": [
+                    {
+                        "subcategory": "Any medium/big liquid or oil", "tags": []
+                    },
+                    {
+                        "subcategory": "Vomit", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Shattered glass",
+                "content": [
+                    {
+                        "subcategory": "Shattered glasse", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "From animal",
+                "content": [
+                    {
+                        "subcategory": "Dog fouling", "tags": []
+                    },
+                    {
+                        "subcategory": "Carcass", "tags": []
+                    },
+                    {
+                        "subcategory": "Robidog", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Fabric and clothes",
+                "content": [
+                    {
+                        "subcategory": "Hygienic mask", "tags": []
+                    },
+                    {
+                        "subcategory": "Fabric", "tags": []
+                    }
+                ]
+            },
+            {
+                "category": "Waste bin",
+                "content": [
+                    {
+                        "subcategory": "Whole waste bin", "tags": []
+                    },
+                    {
+                        "subcategory": "Waste bin opening", "tags": []
+                    }
+                ]
+            }
+        ];
+        includeExternalContent("waste bin")
+        // Populate menu with documentation categories and subcategories
+        const menuList = document.getElementById('menuList');
+        documentationData.forEach(category => {
+            const listItem = document.createElement('li');
+            listItem.textContent = category.category;
+            listItem.onclick = () => includeExternalContent(category.category);
+            menuList.appendChild(listItem);
+        });
+
+        // Display documentation content in the main window
+        function displayContent(item) {
+            const mainContent = document.getElementById('main');
+            if (item.content) {
+                mainContent.innerHTML = `<h2>${item.category || ''} ${item.subcategory || ''}</h2><p>${item.content}</p>`;
+            }
+        }
+
+        // Search function
+        function search() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const searchResults = [];
+            documentationData.forEach(category => {
+                if (category.content) {
+                    category.content.forEach(content_item => {
+                    const subcategoryMatch = content_item.subcategory.toLowerCase().includes(searchInput);
+                    if (subcategoryMatch) {
+                            searchResults.push({ category: category.category, subcategory: content_item.subcategory || '' });
+                    } else {
+                        content_item.tags.forEach(tag => {
+                            console.log(tag)
+                            const contentMatch = tag.toLowerCase().includes(searchInput);
+                        if (contentMatch || subcategoryMatch) {
+                            searchResults.push({ category: category.category, subcategory: content_item.subcategory || '' });
+                        }
+                        })}
+                    });
+                }
+            });
+
+            const mainContent = document.getElementById('main');
+            mainContent.innerHTML = '';
+            searchResults.forEach(result => {
+                mainContent.innerHTML += `<p>${result.category} -> ${result.subcategory}</p>`;
+            });
+        }
+    </script>
+</body>
+</html>
