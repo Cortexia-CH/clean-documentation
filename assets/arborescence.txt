@@ -1,0 +1,166 @@
+Addictions & drug related
+└── type
+    ├── Cigarette
+    ├── Cigarette box
+    ├── Iqos
+    ├── Syringe
+    └── Nitrous oxyde bottle
+        └── size
+            ├── Small
+            └── Big
+
+
+Bags & liners
+└── type
+    ├── Garbage bag
+    │   └── colour
+    │       ├── Black
+    │       ├── White
+    │       ├── Opaque blue
+    │       ├── Transparent blue
+    │       ├── Transparent
+    │       ├── Orange
+    │       ├── Green
+    │       ├── Gray
+    │       └── Other
+    ├── Ring-and-bag bin
+    │   └── state
+    │       ├── Normal
+    │       └── Overflowing
+    ├── Paper bag
+    ├── Robidog
+    └── Plastic bag (NOT garbage bag)
+        └── colour
+            ├── White
+            ├── Coloured
+            └── Transparent
+
+
+Drink containers (bottles, cups...)
+└── type
+    ├── Can
+    ├── Bottle
+    │   └── material
+    │       ├── PET
+    │       └── Glass
+    ├── Cup
+    │   └── type
+    │       ├── Transparent
+    │       └── Opaque
+    └── Carton drink (Tetra Pak)
+
+
+Food-related (trays, cutlery, ...)
+└── type
+    ├── Tray or tray lid
+    │   └── type
+    │       ├── Transparent
+    │       │   └── shape
+    │       │       ├── Circular
+    │       │       └── Rectangular
+    │       └── Opaque
+    │           └── shape
+    │               ├── Circular
+    │               └── Rectangular
+    ├── Cutlery (forks, knives...)
+    ├── Plate
+    └── Organic food littering
+
+
+Animal waste
+└── type
+    ├── Dog feces
+    └── Robidog
+
+
+Shattered glass
+└── type
+    ├── Individual piece
+    └── Pile
+
+
+Other - SOFT, flexible plastic, paper and thin cardboard
+└── type
+    ├── Newspaper/magazine
+    ├── Hygienic mask
+    └── Other paper/soft plastic/thin cardboard
+        └── colour
+            ├── White
+            │   └── material
+            │       ├── Paper
+            │       └── Plastic
+            ├── Transparent
+            └── Coloured
+                └── look
+                    ├── Plain colour
+                    └── Designed
+
+
+Other - SOLID material (plastic, cardboard, ...)
+└── type
+    ├── Brown (kraft) cardboard
+    ├── Cigarette box
+    ├── Tiny coloured plastic piece
+    ├── Flat disk
+    │   └── type
+    │       ├── Lid
+    │       │   └── type
+    │       │       ├── Transparent
+    │       │       └── Opaque
+    │       └── Other circular object
+    ├── Long thin object / straws (any material)
+    ├── Other box/piece of cardboard
+    └── Any other
+
+
+Heaps of leaves
+└── type
+    └── Heaps of leaves
+
+
+Graffiti
+└── type
+    └── Graffiti
+
+
+Stain (medium/big)
+└── type
+    └── Stain (medium/big)
+
+
+Bin/dumpster
+└── type
+    ├── Waste basket
+    │   └── state
+    │       ├── Normal
+    │       └── Full/overflowing
+    ├── Dumpster / wheelie bin
+    │   └── state
+    │       ├── Normal
+    │       └── Overflowing
+    └── Ring-and-bag bin
+        └── state
+            ├── Normal
+            └── Full/overflowing
+
+
+Sweeper brush
+└── type
+    └── Sweeper brush
+
+
+Drain/sewer grate
+└── state
+    ├── Clear
+    └── Obstructed
+
+
+Curb inlet
+└── state
+    ├── Clear
+    └── Obstructed
+
+
+Other
+└── type
+    └── Other
