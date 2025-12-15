@@ -33,9 +33,6 @@ Bags & liners
         └── colour
             ├── White
             ├── Coloured
-            │   └── look
-            │       ├── Plain colour
-            │       └── Designed
             └── Transparent
 
 
@@ -58,7 +55,13 @@ Food-related (trays, cutlery, ...)
     ├── Tray or tray lid
     │   └── type
     │       ├── Transparent
+    │       │   └── shape
+    │       │       ├── Circular
+    │       │       └── Rectangular
     │       └── Opaque
+    │           └── shape
+    │               ├── Circular
+    │               └── Rectangular
     ├── Cutlery (forks, knives...)
     ├── Plate
     └── Organic food littering
@@ -76,11 +79,11 @@ Shattered glass
     └── Pile
 
 
-Other - soft, flexible plastic and paper
+Other - SOFT, flexible plastic, paper and thin cardboard
 └── type
     ├── Newspaper/magazine
     ├── Hygienic mask
-    └── Any piece of soft plastic / paper
+    └── Other paper/soft plastic/thin cardboard
         └── colour
             ├── White
             │   └── material
@@ -93,23 +96,36 @@ Other - soft, flexible plastic and paper
                     └── Designed
 
 
-Other - solid material (plastic, cardboard, ...)
+Other - SOLID material (plastic, cardboard, ...)
 └── type
-    ├── Brown cardboard
+    ├── Brown (kraft) cardboard
     ├── Cigarette box
     ├── Tiny coloured plastic piece
+    ├── Flat disk
+    │   └── type
+    │       ├── Lid
+    │       │   └── type
+    │       │       ├── Transparent
+    │       │       └── Opaque
+    │       └── Other circular object
     ├── Long thin object / straws (any material)
-    ├── Other piece of coloured cardboard
+    ├── Other box/piece of cardboard
     └── Any other
 
 
 Heaps of leaves
+└── type
+    └── Heaps of leaves
 
 
 Graffiti
+└── type
+    └── Graffiti
 
 
 Stain (medium/big)
+└── type
+    └── Stain (medium/big)
 
 
 Bin/dumpster
@@ -129,6 +145,8 @@ Bin/dumpster
 
 
 Sweeper brush
+└── type
+    └── Sweeper brush
 
 
 Drain/sewer grate
@@ -144,3 +162,5 @@ Curb inlet
 
 
 Other
+└── type
+    └── Other
