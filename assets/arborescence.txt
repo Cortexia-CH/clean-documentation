@@ -101,13 +101,16 @@ Other - SOLID material (plastic, cardboard, ...)
     ├── Brown (kraft) cardboard
     ├── Cigarette box
     ├── Tiny coloured plastic piece
-    ├── Flat disk
+    ├── Lid
     │   └── type
-    │       ├── Lid
-    │       │   └── type
-    │       │       ├── Transparent
-    │       │       └── Opaque
-    │       └── Other circular object
+    │       ├── Transparent
+    │       │   └── shape
+    │       │       ├── Circular
+    │       │       └── Rectangular
+    │       └── Opaque
+    │           └── shape
+    │               ├── Circular
+    │               └── Rectangular
     ├── Long thin object / straws (any material)
     ├── Other box/piece of cardboard
     └── Any other
@@ -164,3 +167,8 @@ Curb inlet
 Other
 └── type
     └── Other
+
+
+Global classification
+└── clean
+    └── Clean
